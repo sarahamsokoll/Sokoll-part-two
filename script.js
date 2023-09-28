@@ -1,26 +1,45 @@
-/*
-step 1: Prompt the user for their name.
-step 2: Next, prompt the user if they would like to play 3 or 6 holes of mini golf.
-Finally, prompt the user either 3 times or 6 times (depending on their input for the second prompt) for each "hole of golf" asking for the number of putts for that specific hole.
-Keep track of their cumulative score (total number of putts) and at the end, compare that to the total course par (9 if they chose 3 holes, 18 if they chose 6 — par is 3 for every hole) to calculate the golfer’s total par for the round.
-After the last hole, one of three messages is logged to the console depending on if the user was over, under or on par for the round:
-If over par, the message should read "Nice try, (name)... Your total par was: +(par)." [be sure to include the plus symbol here to denote over par].
-If under par, the message should read "Great job, (name)! Your total par was: -(par)." [include the minus symbol]
-If even with par, the message should read "Good game, (name). Your total par was: 0."
+let userName = prompt("Welcome to GC Mini Golf! What is your name?")
+let numberOfHoles = prompt(`Hello, ${userName}! Would you like to play 3 or 6 holes of mini golf?`)
+console.log(userName)
+console.log(numberOfHoles)
 
-*/
+let par = 0
+let total = 0
 
-let userName = prompt("What is your name?")
-let numberHoles = prompt("Would you like to play 3 or 6 holes of mini golf?")
 
-if (numberHoles === "3") {
-    console.log("How many putts for hole 1?")
+if (numberOfHoles === "3") {
+    par = 9;
+    let Hole1 = prompt("How many putts for hole 1?");
+    let Hole2 = prompt("How many putts for hole 2?");
+    let Hole3 = prompt("How many putts for hole 3?");
+    total = Number(Hole1) + Number(Hole2) + Number(Hole3) - par;
+    if (total > 9) {
+    console.log(`Nice try, ${userName}... Your total par was:` + total + ".");
+    }
+    if (total < 9) {
+    console.log(`Great job, ${userName}! Your total par was:` + total + ".");
+    }
+    if (total === 9) {
+    console.log(`Good game, ${userName}. Your total par was:` + total + ".");
+    }
 }
 
-if (numberHoles === "6") {
-    console.log("How many putts for hole 1?")
+if (numberOfHoles === "6") {
+    par = 18;
+    let Hole1 = prompt("How many putts for hole 1?");
+    let Hole2 = prompt("How many putts for hole 2?");
+    let Hole3 = prompt("How many putts for hole 3?");
+    let Hole4 = prompt("How many putts for hole 4?");
+    let Hole5 = prompt("How many putts for hole 5?");
+    let Hole6 = prompt("How many putts for hole 6?");
+    total = Number(Hole1) + Number(Hole2) + Number(Hole3) + Number(Hole4) + Number(Hole5) + Number(Hole6) - par;
+    if (total > 18) {
+        console.log(`Nice try, ${userName}... Your total par was:` + total + ".");
+        }
+        if (total < 18) {
+        console.log(`Great job, ${userName}! Your total par was:` + total + ".");
+        }
+        if (total === 18) {
+        console.log(`Good game, ${userName}. Your total par was:` + total + ".");
+        }
 }
-
-let numberPutts = prompt("")
-
-// for, while, do... while
